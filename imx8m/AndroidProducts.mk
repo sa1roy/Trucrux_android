@@ -27,9 +27,15 @@
 # Copied from build/target/product/AndroidProducts.mk
 
 PRODUCT_MAKEFILES := \
+  $(LOCAL_DIR)/imx8mq_trux_q01/imx8mq_trux_q01.mk \
+  $(LOCAL_DIR)/imx8mq_trux_q01/imx8mq_trux_q01_drm.mk \
   $(LOCAL_DIR)/imx8mm_trux_q01/imx8mm_trux_q01.mk \
   $(LOCAL_DIR)/imx8mm_trux_q01/imx8mm_trux_q01_drm.mk \
 COMMON_LUNCH_CHOICES := \
+  imx8mq_trux_q01-user \
+  imx8mq_trux_q01-userdebug \
+  imx8mq_trux_q01_drm-user \
+  imx8mq_trux_q01_drm-userdebug \
   imx8mm_trux_q01-user \
   imx8mm_trux_q01-userdebug \
   imx8mm_trux_q01_drm-user \
