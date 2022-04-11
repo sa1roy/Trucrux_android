@@ -1,0 +1,39 @@
+From 54fa604bcffdb907cdad9e74cf17b4e90602b94b Mon Sep 17 00:00:00 2001
+From: Sawan Roy <sawan.roy@trunexa.com>
+Date: Mon, 11 Apr 2022 15:29:16 +0530
+Subject: [PATCH 2/8] sysfs sepolicy: allow sysfs and domain access.
+
+---
+ prebuilts/api/30.0/public/domain.te | 2 +-
+ public/domain.te                    | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/prebuilts/api/30.0/public/domain.te b/prebuilts/api/30.0/public/domain.te
+index 963bf4e..5f40558 100644
+--- a/prebuilts/api/30.0/public/domain.te
++++ b/prebuilts/api/30.0/public/domain.te
+@@ -1021,7 +1021,7 @@ full_treble_only(`
+   # Do not allow vendor components access to /system files except for the
+   # ones whitelisted here.
+   neverallow {
+-    domain
++    -domain
+     -appdomain
+     -coredomain
+     -vendor_executes_system_violators
+diff --git a/public/domain.te b/public/domain.te
+index 963bf4e..5f40558 100644
+--- a/public/domain.te
++++ b/public/domain.te
+@@ -1021,7 +1021,7 @@ full_treble_only(`
+   # Do not allow vendor components access to /system files except for the
+   # ones whitelisted here.
+   neverallow {
+-    domain
++    -domain
+     -appdomain
+     -coredomain
+     -vendor_executes_system_violators
+-- 
+2.7.4
+

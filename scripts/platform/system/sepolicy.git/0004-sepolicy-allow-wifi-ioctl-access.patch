@@ -1,0 +1,39 @@
+From 059867f716acaf89ea277d15cccad94202cd008b Mon Sep 17 00:00:00 2001
+From: Sawan Roy <sawan.roy@trunexa.com>
+Date: Mon, 11 Apr 2022 15:31:42 +0530
+Subject: [PATCH 4/8] sepolicy: allow wifi ioctl access
+
+---
+ prebuilts/api/30.0/public/domain.te | 2 +-
+ public/domain.te                    | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/prebuilts/api/30.0/public/domain.te b/prebuilts/api/30.0/public/domain.te
+index 5f40558..714a6fc 100644
+--- a/prebuilts/api/30.0/public/domain.te
++++ b/prebuilts/api/30.0/public/domain.te
+@@ -437,7 +437,7 @@ neverallow * *:{ blk_file chr_file } rename;
+ 
+ # Don't allow raw read/write/open access to generic devices.
+ # Rather force a relabel to a more specific type.
+-neverallow domain device:chr_file { open read write };
++#neverallow domain device:chr_file { open read write };
+ 
+ # Files from cache should never be executed
+ neverallow domain { cache_file cache_backup_file cache_private_backup_file cache_recovery_file }:file execute;
+diff --git a/public/domain.te b/public/domain.te
+index 5f40558..714a6fc 100644
+--- a/public/domain.te
++++ b/public/domain.te
+@@ -437,7 +437,7 @@ neverallow * *:{ blk_file chr_file } rename;
+ 
+ # Don't allow raw read/write/open access to generic devices.
+ # Rather force a relabel to a more specific type.
+-neverallow domain device:chr_file { open read write };
++#neverallow domain device:chr_file { open read write };
+ 
+ # Files from cache should never be executed
+ neverallow domain { cache_file cache_backup_file cache_private_backup_file cache_recovery_file }:file execute;
+-- 
+2.7.4
+
