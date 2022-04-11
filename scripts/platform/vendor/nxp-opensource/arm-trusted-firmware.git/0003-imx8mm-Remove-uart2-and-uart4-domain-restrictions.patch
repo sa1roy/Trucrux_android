@@ -1,0 +1,25 @@
+From ddcb987f60bf195b9c575cd5e635bdde78497057 Mon Sep 17 00:00:00 2001
+From: Sawan Roy <sawan.roy@trunexa.com>
+Date: Mon, 11 Apr 2022 16:09:53 +0530
+Subject: [PATCH 3/5] imx8mm: Remove uart2 and uart4 domain restrictions
+
+---
+ plat/imx/imx8m/imx8mm/imx8mm_bl31_setup.c | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/plat/imx/imx8m/imx8mm/imx8mm_bl31_setup.c b/plat/imx/imx8m/imx8mm/imx8mm_bl31_setup.c
+index b46fd62..b27e9e5 100644
+--- a/plat/imx/imx8m/imx8mm/imx8mm_bl31_setup.c
++++ b/plat/imx/imx8m/imx8mm/imx8mm_bl31_setup.c
+@@ -58,8 +58,6 @@ static const struct imx_rdc_cfg rdc[] = {
+ 	RDC_MDAn(RDC_MDA_M4, DID1),
+ 
+ 	/* peripherals domain permission */
+-	RDC_PDAPn(RDC_PDAP_UART4, D1R | D1W),
+-	RDC_PDAPn(RDC_PDAP_UART2, D0R | D0W),
+ 
+ 	/* memory region */
+ 
+-- 
+2.7.4
+

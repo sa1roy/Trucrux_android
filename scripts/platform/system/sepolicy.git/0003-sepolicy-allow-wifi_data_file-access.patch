@@ -1,0 +1,37 @@
+From 17e209db45dd4936b9a30f2a66448db20260987e Mon Sep 17 00:00:00 2001
+From: Sawan Roy <sawan.roy@trunexa.com>
+Date: Mon, 11 Apr 2022 15:30:42 +0530
+Subject: [PATCH 3/8] sepolicy: allow wifi_data_file access.
+
+---
+ prebuilts/api/30.0/public/vendor_init.te | 1 +
+ public/vendor_init.te                    | 1 +
+ 2 files changed, 2 insertions(+)
+
+diff --git a/prebuilts/api/30.0/public/vendor_init.te b/prebuilts/api/30.0/public/vendor_init.te
+index 36bb5cb..26fdf0a 100644
+--- a/prebuilts/api/30.0/public/vendor_init.te
++++ b/prebuilts/api/30.0/public/vendor_init.te
+@@ -74,6 +74,7 @@ allow vendor_init {
+   -vold_metadata_file
+   -gsi_metadata_file
+   -apex_metadata_file
++  -wifi_data_file
+ }:file { create getattr open read write setattr relabelfrom unlink map };
+ 
+ allow vendor_init {
+diff --git a/public/vendor_init.te b/public/vendor_init.te
+index 36bb5cb..26fdf0a 100644
+--- a/public/vendor_init.te
++++ b/public/vendor_init.te
+@@ -74,6 +74,7 @@ allow vendor_init {
+   -vold_metadata_file
+   -gsi_metadata_file
+   -apex_metadata_file
++  -wifi_data_file
+ }:file { create getattr open read write setattr relabelfrom unlink map };
+ 
+ allow vendor_init {
+-- 
+2.7.4
+

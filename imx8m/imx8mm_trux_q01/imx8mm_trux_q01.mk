@@ -286,11 +286,6 @@ PRODUCT_COPY_FILES += \
     external/wireless-regdb/regulatory.db:vendor/firmware/regulatory.db \
     external/wireless-regdb/regulatory.db.p7s:vendor/firmware/regulatory.db.p7s
 
-PRODUCT_COPY_FILES += \
-device/trucrux/common/rpmsg_lite_pingpong_rtos_linux_remote.bin:vendor/firmware/rpmsg_lite_pingpong_rtos_linux_remote.bin \
-device/trucrux/common/rpmsg_lite_pingpong_rtos_linux_remote.elf:vendor/firmware/rpmsg_lite_pingpong_rtos_linux_remote.elf \
-device/trucrux/common/hello_world.elf:vendor/firmware/hello_world.elf
-
 #Boot Animation
 PRODUCT_COPY_FILES += \
    device/trucrux/common/bootanimation-aosp.zip:system/media/bootanimation.zip
